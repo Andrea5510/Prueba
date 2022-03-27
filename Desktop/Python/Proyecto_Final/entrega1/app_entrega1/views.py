@@ -18,7 +18,7 @@ def autor(request):
 
                   informacion = miFormulario.cleaned_data
 
-                  autor = Autores (nombre=informacion['nombre'], camada=informacion['apellido']) 
+                  autor = Autores (nombre=informacion['nombre'], apellido=informacion['apellido']) 
 
                   autor.save()
 
