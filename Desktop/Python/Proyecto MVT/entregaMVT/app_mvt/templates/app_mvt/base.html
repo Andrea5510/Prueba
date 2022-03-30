@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        {% load static %}
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Scrolling Nav - Start Bootstrap Template</title>
+        <link rel="icon" type="image/x-icon" href="{% static 'app_mvt/assets/favicon.ico' %}"" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'app_mvt/css/styles.css' %}" rel="stylesheet" />
+
+    </head>
+    <body id="page-top">
+        <!-- Header-->
+        <header class="bg-primary bg-gradient text-white">
+            <div class="container px-4 text-center">
+                <h1 class="fw-bolder">Familia Vazquez - Lamas</h1>
+                <p class="lead">Pequeño resúmen de mi familia</p>
+            </div>
+        </header>
+            {% block main_content %}
+
+            <!-- Lista de familiares -->
+            <div class="container mt-5">
+                <table class="table" center>
+                    <thead >
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Fecha de Nacimiento</th>
+                            <th>Cantidad de Hijos</th>   
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                            {% for family in familia %}
+                            <tr>
+                            <td>{{family.nombre}}</td>
+                            <td>{{family.apellido}}</td>
+                            <td>{{family.fecha_nacimiento}}</td>
+                            <td>{{family.cantidad_hijos}}</td>
+                            </tr> 
+                            {% endfor %}
+                    </tbody>
+                </table>
+
+
+            </div>
+
+            <br><br><br>
+
+            {% endblock main_content %}
+
+</html>
